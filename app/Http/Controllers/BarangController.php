@@ -11,68 +11,69 @@ use App\Mail\BarangCreatedMail;
 class BarangController extends Controller
 {
     public function index(Request $request)
-{
-    $search = $request->search;
-    $kategori = $request->kategori; // dari dropdown filter
+    {
+        $search = $request->search;
+        $kategori = $request->kategori;
 
-    $barangs = Barang::with('kategori')
-        ->when($search, function ($q) use ($search) {
-            $q->where('NamaBarang', 'like', "%$search%")
-              ->orWhere('Harga', 'like', "%$search%")
-              ->orWhere('Stock', 'like', "%$search%")
-              ->orWhereHas('kategori', function ($k) use ($search) {
-                  $k->where('NamaKategori', 'like', "%$search%");
-              });
-        })
-        ->when($kategori, function ($q) use ($kategori) {
-            $q->where('KategoriID', $kategori);
-        })
-        ->get();
+        $barangs = Barang::with('kategori')
+            ->when($search, function ($q) use ($search) {
+                $q->where('NamaBarang', 'like', "%$search%")
+                  ->orWhere('Harga', 'like', "%$search%")
+                  ->orWhere('Stock', 'like', "%$search%")
+                  ->orWhereHas('kategori', function ($k) use ($search) {
+                      $k->where('NamaKategori', 'like', "%$search%");
+                  });
+            })
+            ->when($kategori, function ($q) use ($kategori) {
+                $q->where('KategoriID', $kategori);
+            })
+            ->get();
 
-    // ⬇️ INI YANG KURANG
-    $kategoris = \App\Models\Kategori::all();
+        $kategoris = Kategori::all();
 
-    return view('barangs.index', compact('barangs','kategoris'));
-}
-
-    
-
-    public function store(Request $request)
-  
-{
-    $request->validate([
-        'KategoriID' => 'required|exists:kategoris,KategoriID',
-        'NamaBarang' => 'required',
-        'Harga' => 'required|numeric',
-        'Stock' => 'required|numeric',
-        'Deskripsi' => 'required',
-        'Foto' => 'nullable|image',
-    ]);
-
-    $foto = null;
-
-    if ($request->hasFile('Foto')) {
-        $file = $request->file('Foto');
-        $namaFoto = time() . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path('foto_barang'), $namaFoto);
-        $foto = $namaFoto;
+        return view('barangs.index', compact('barangs','kategoris'));
     }
 
-    $barang = Barang::create([
-        'NamaBarang' => $request->NamaBarang,
-        'KategoriID' => $request->KategoriID,
-        'Harga' => $request->Harga,
-        'Stock' => $request->Stock,
-        'Deskripsi' => $request->Deskripsi,
-        'Foto' => $foto
-    ]);
+    /* ================= CREATE (YANG TADI HILANG) ================= */
+    public function create()
+    {
+        $kategoris = Kategori::all();
+        return view('barangs.create', compact('kategoris'));
+    }
 
-    Mail::to('dummy@mail.com')->send(
-        new BarangCreatedMail($barang)
-    );
+    public function store(Request $request)
+    {
+        $request->validate([
+            'KategoriID' => 'required|exists:kategoris,KategoriID',
+            'NamaBarang' => 'required',
+            'Harga' => 'required|numeric',
+            'Stock' => 'required|numeric',
+            'Deskripsi' => 'required',
+            'Foto' => 'nullable|image',
+        ]);
 
-    return redirect()->route('barangs.index')->with('success', 'Barang berhasil ditambahkan');
-}
+        $foto = null;
+
+        if ($request->hasFile('Foto')) {
+            $file = $request->file('Foto');
+            $namaFoto = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('foto_barang'), $namaFoto);
+            $foto = $namaFoto;
+        }
+
+        $barang = Barang::create([
+            'NamaBarang' => $request->NamaBarang,
+            'KategoriID' => $request->KategoriID,
+            'Harga' => $request->Harga,
+            'Stock' => $request->Stock,
+            'Deskripsi' => $request->Deskripsi,
+            'Foto' => $foto
+        ]);
+
+        Mail::to('dummy@mail.com')->send(new BarangCreatedMail($barang));
+
+        return redirect()->route('barangs.index')->with('success', 'Barang berhasil ditambahkan');
+    }
 
     public function edit($id)
     {
@@ -109,10 +110,8 @@ class BarangController extends Controller
     }
 
     public function destroy($id)
-    
     {
         Barang::destroy($id);
         return redirect()->route('barangs.index')->with('success', 'Data berhasil dihapus');
     }
-
 }

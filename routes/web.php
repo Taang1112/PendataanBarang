@@ -11,10 +11,18 @@ use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\BarangKeluarController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Barang;
+use App\Models\Kategori;
+use App\Models\Supplier;
 
 /* ================= PUBLIC ================= */
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'barangs' => Barang::with('kategori')->latest()->take(3)->get(),
+        'kategoris' => Kategori::take(4)->get(),
+        'totalBarang' => Barang::count(),
+        'totalSupplier' => Supplier::count(),
+    ]);
 });
 
 require __DIR__.'/auth.php';

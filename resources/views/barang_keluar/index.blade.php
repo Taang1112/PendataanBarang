@@ -64,7 +64,7 @@
                         <tr>
                             <td class="ps-4">{{ $loop->iteration }}</td>
                             <td>{{ $item->barang->NamaBarang }}</td>
-                            <td>{{ $item->jumlah_keluar }} pcs</td>
+                            <td>{{ $item->JumlahKeluar }} pcs</td>
                             <td>{{ \Carbon\Carbon::parse($item->tanggal_keluar)->format('d M Y') }}</td>
                             <td>{{ $item->Keterangan ?: '-' }}</td>
                             <td>{{ $item->barang->Stock }} pcs</td>

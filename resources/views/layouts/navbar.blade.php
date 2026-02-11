@@ -1,4 +1,112 @@
-<nav class="app-header navbar navbar-expand bg-body">
+<nav class="app-header navbar navbar-expand">
+  <style>
+    /* TEMA DARK BLUE UNTUK NAVBAR */
+    .app-header {
+      background: rgba(10, 25, 47, 0.85) !important;
+      backdrop-filter: blur(10px) !important;
+      border-bottom: 1px solid rgba(100, 255, 218, 0.1) !important;
+      padding: 0 30px !important;
+      height: 70px !important;
+    }
+    
+    .navbar-nav .nav-link {
+      color: #8892b0 !important;
+      padding: 10px 15px !important;
+      border-radius: 8px !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .navbar-nav .nav-link:hover {
+      color: #64ffda !important;
+      background: rgba(100, 255, 218, 0.1) !important;
+    }
+    
+    .navbar-nav .nav-link i {
+      font-size: 18px !important;
+    }
+    
+    .user-menu .dropdown-toggle {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      color: #8892b0 !important;
+      text-decoration: none !important;
+    }
+    
+    .user-menu .dropdown-toggle:hover {
+      color: #64ffda !important;
+    }
+    
+    .user-image {
+      width: 36px !important;
+      height: 36px !important;
+      border: 2px solid rgba(100, 255, 218, 0.2) !important;
+    }
+    
+    .user-menu .dropdown-menu {
+      background: rgba(17, 34, 64, 0.95) !important;
+      backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(100, 255, 218, 0.1) !important;
+      border-radius: 12px !important;
+      color: #e6f1ff !important;
+      margin-top: 10px !important;
+    }
+    
+    .user-header {
+      background: linear-gradient(135deg, #0ea5e9, #2563eb) !important;
+      padding: 20px !important;
+      text-align: center !important;
+      border-radius: 12px 12px 0 0 !important;
+    }
+    
+    .user-header .user-image {
+      width: 80px !important;
+      height: 80px !important;
+      border: 3px solid rgba(255, 255, 255, 0.3) !important;
+      margin-bottom: 10px !important;
+    }
+    
+    .user-header p {
+      color: white !important;
+      margin: 0 !important;
+      line-height: 1.4 !important;
+    }
+    
+    .user-header p small {
+      display: block !important;
+      font-size: 12px !important;
+      opacity: 0.8 !important;
+      margin-top: 5px !important;
+    }
+    
+    .user-footer {
+      padding: 15px !important;
+      background: rgba(30, 41, 59, 0.5) !important;
+    }
+    
+    .btn-default {
+      background: rgba(100, 255, 218, 0.1) !important;
+      border: 1px solid rgba(100, 255, 218, 0.3) !important;
+      color: #64ffda !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .btn-default:hover {
+      background: rgba(100, 255, 218, 0.2) !important;
+      border-color: #64ffda !important;
+    }
+    
+    @media (max-width: 768px) {
+      .app-header {
+        padding: 0 15px !important;
+      }
+      
+      .d-none.d-md-block {
+        display: none !important;
+      }
+    }
+  </style>
+
   <div class="container-fluid">
 
     <!-- LEFT SIDE -->
@@ -63,13 +171,7 @@
           
           </li>
 
-          <li class="user-body">
-            <div class="row">
-              <div class="col-4 text-center"><a href="#">Barang</a></div>
-              <div class="col-4 text-center"><a href="#">Transaksi</a></div>
-              <div class="col-4 text-center"><a href="#">Laporan</a></div>
-            </div>
-          </li>
+          
 
           <li class="user-footer">
             <a href="{{ route('profile.edit') }}" class="btn btn-default btn-flat">Profile</a>

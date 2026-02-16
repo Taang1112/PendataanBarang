@@ -47,11 +47,12 @@ RUN php artisan config:cache || true
 RUN php artisan route:cache || true
 RUN php artisan view:cache || true
 
-# Run migrations otomatis saat build
-RUN php artisan migrate --force || true
+# Copy entrypoint script
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-# Expose default Apache port
+# Expose Apache port
 EXPOSE 80
 
-# Start Apache in foreground
-CMD ["apache2-foreground"]
+# Use entrypoint
+ENTRYPOINT ["/entrypoint.sh"]

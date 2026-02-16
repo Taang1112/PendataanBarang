@@ -2,114 +2,222 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Inventory System</title>
+
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    
+    <!-- Lottie Player -->
+   
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .glass-morphism {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
 </head>
 
-<body style="margin:0; padding:0; background:#0f172a; font-family:Inter, Segoe UI, Arial, sans-serif;">
+<body class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex relative overflow-x-hidden overflow-y-auto">
 
-<div style="max-width:420px; margin:70px auto; padding:0 15px;">
-    <div style="background:linear-gradient(135deg,#1e293b,#020617);
-                border-radius:18px;
-                box-shadow:0 25px 60px rgba(0,0,0,.45);
-                overflow:hidden;">
 
-        <!-- STRIPE -->
-        <div style="height:6px; background:linear-gradient(90deg,#38bdf8,#6366f1,#a855f7);"></div>
-
-        <!-- HEADER -->
-        <div style="padding:32px; color:white; text-align:center;">
-            <h2 style="margin:0; font-size:24px;">Inventory System</h2>
-            <p style="margin-top:8px; color:#94a3b8; font-size:14px;">
-                Login ke dashboard admin
-            </p>
-        </div>
-
-        <!-- BODY -->
-        <div style="padding:28px; background:rgba(255,255,255,0.03);">
-
-            {{-- ERROR --}}
-            @if ($errors->any())
-                <div style="background:#7f1d1d; padding:12px; border-radius:10px; color:#fecaca; font-size:13px; margin-bottom:15px;">
-                    {{ $errors->first() }}
-                </div>
-            @endif
-
-            {{-- GOOGLE --}}
-            <a href="{{ url('/auth/google') }}"
-               style="display:block; text-align:center; padding:12px;
-                      background:white; color:#111827; border-radius:10px;
-                      text-decoration:none; font-weight:600; margin-bottom:18px;">
-                <img src="https://developers.google.com/identity/images/g-logo.png"
-                     style="width:18px; vertical-align:middle; margin-right:8px;">
-                Login dengan Google
-            </a>
-
-            <div style="text-align:center; color:#64748b; font-size:13px; margin-bottom:18px;">
-                — atau —
-            </div>
-
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-
-                <!-- EMAIL -->
-                <input type="email" name="email" required
-                       placeholder="Email"
-                       style="width:100%; padding:12px; border-radius:10px;
-                              border:none; margin-bottom:12px;
-                              background:#020617; color:white;">
-
-                <!-- PASSWORD -->
-                <input type="password" name="password" required
-                       placeholder="Password"
-                       style="width:100%; padding:12px; border-radius:10px;
-                              border:none; margin-bottom:12px;
-                              background:#020617; color:white;">
-
-                <!-- CAPTCHA -->
-                <div style="margin-bottom:10px;">
-                    <div id="captcha-image">{!! captcha_img() !!}</div>
-                    <a href="javascript:void(0)"
-                       onclick="refreshCaptcha()"
-                       style="font-size:12px; color:#38bdf8;">Refresh captcha</a>
-                </div>
-
-                <input type="text" name="captcha" required
-                       placeholder="Masukkan kode captcha"
-                       style="width:100%; padding:12px; border-radius:10px;
-                              border:none; margin-bottom:18px;
-                              background:#020617; color:white;">
-
-                <!-- BUTTON -->
-                <button type="submit"
-                        style="width:100%; padding:14px;
-                               background:linear-gradient(135deg,#38bdf8,#6366f1);
-                               border:none; border-radius:999px;
-                               color:white; font-weight:700;
-                               cursor:pointer;">
-                    LOGIN
-                </button>
-            </form>
-
-            <div style="margin-top:16px; text-align:center;">
-                <a href="{{ route('password.request') }}"
-                   style="font-size:12px; color:#94a3b8;">
-                    Lupa password?
-                </a>
-            </div>
-
-        </div>
-
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
     </div>
+
+    <!-- LEFT SIDE -->
+    <div class="hidden lg:flex w-1/2 items-center justify-center relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-indigo-500/10 to-purple-500/10"></div>
+        
+        <div class="text-center px-12 relative z-10">
+            <!-- Lottie Animation - Inventory Management -->
+<div class="inline-block mb-8">
+    <lottie-player
+    src="https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json"
+    background="transparent"
+    speed="1"
+    style="width: 200px; height: 200px; margin: 0 auto;"
+    loop
+    autoplay>
+</lottie-player>
+
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-function refreshCaptcha(){
-    $.get("{{ route('refresh.captcha') }}", function(data){
-        $('#captcha-image').html(data.captcha);
-    });
-}
-</script>
+            
+            <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 mb-4 tracking-tight">
+                Inventory System
+            </h1>
 
+            <div class="h-1 w-24 bg-gradient-to-r from-sky-500 to-indigo-500 mx-auto mb-6 rounded-full"></div>
+
+            <p class="text-slate-400 leading-relaxed text-lg max-w-md mx-auto">
+                Kelola data inventaris dengan cepat,
+                <span class="text-sky-400 font-semibold">aman</span>, dan 
+                <span class="text-indigo-400 font-semibold">profesional</span> 
+                dalam satu dashboard.
+            </p>
+
+            <div class="mt-12 grid grid-cols-3 gap-4 max-w-md mx-auto">
+                <div class="p-4 bg-slate-800/30 rounded-xl backdrop-blur-sm border border-slate-700/30">
+                    <div class="text-2xl font-bold text-white">100+</div>
+                    <div class="text-xs text-slate-500">Users</div>
+                </div>
+                <div class="p-4 bg-slate-800/30 rounded-xl backdrop-blur-sm border border-slate-700/30">
+                    <div class="text-2xl font-bold text-white">50K+</div>
+                    <div class="text-xs text-slate-500">Items</div>
+                </div>
+                <div class="p-4 bg-slate-800/30 rounded-xl backdrop-blur-sm border border-slate-700/30">
+                    <div class="text-2xl font-bold text-white">24/7</div>
+                    <div class="text-xs text-slate-500">Support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center px-6 relative z-10">
+        <div class="w-full max-w-md transform transition-all duration-300 hover:scale-[1.02]">
+            <!-- Card dengan efek glass morphism -->
+            <div class="glass-morphism rounded-3xl p-8 shadow-2xl">
+                
+                <!-- Header dengan stripe gradient -->
+                <div class="flex items-center gap-2 mb-8">
+                    <div class="h-8 w-1 bg-gradient-to-b from-sky-500 via-indigo-500 to-purple-500 rounded-full"></div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-white tracking-tight">
+                            Login
+                        </h2>
+                        <p class="text-slate-400 text-sm mt-1">
+                            Masuk ke Inventory System
+                        </p>
+                    </div>
+                </div>
+
+                {{-- ERROR --}}
+                @if ($errors->any())
+                    <div class="bg-red-950/50 border border-red-800/50 text-red-300 p-4 rounded-xl mb-6 text-sm flex items-center gap-3 backdrop-blur-sm">
+                        <svg class="w-5 h-5 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>{{ $errors->first() }}</span>
+                    </div>
+                @endif
+
+                
+
+                <div class="relative mb-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-slate-700"></div>
+                    </div>
+                    <div class="relative flex justify-center text-xs">
+                        <span class="px-4 bg-slate-800/50 text-slate-400 rounded-full text-sm backdrop-blur-sm">atau</span>
+                    </div>
+                </div>
+
+                <form method="POST" action="{{ route('login') }}" class="space-y-5">
+                    @csrf
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2 ml-1">
+                            Email
+                        </label>
+                        <input type="email" name="email" required
+                            placeholder="contoh@email.com"
+                            class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-3.5 text-white placeholder-slate-500 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 transition-all duration-200">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2 ml-1">
+                            Password
+                        </label>
+                        <input type="password" name="password" required
+                            placeholder="••••••••"
+                            class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-3.5 text-white placeholder-slate-500 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 transition-all duration-200">
+                    </div>
+
+                    <!-- CAPTCHA -->
+                    <div class="space-y-3">
+                        <div class="bg-slate-900/50 border border-slate-700 rounded-xl p-4 flex items-center justify-between">
+                            <div id="captcha-image" class="bg-white/5 rounded-lg overflow-hidden">{!! captcha_img() !!}</div>
+                            <a href="javascript:void(0)"
+                               onclick="refreshCaptcha()"
+                               class="text-sky-400 hover:text-sky-300 text-sm font-medium flex items-center gap-1 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                </svg>
+                                Refresh
+                            </a>
+                        </div>
+
+                        <input type="text" name="captcha" required
+                            placeholder="Masukkan kode captcha"
+                            class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-3.5 text-white placeholder-slate-500 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 transition-all duration-200">
+                    </div>
+
+                    <button
+                        class="w-full bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 hover:from-sky-600 hover:via-indigo-600 hover:to-purple-600 py-3.5 rounded-xl font-bold text-white shadow-lg shadow-sky-500/25 hover:shadow-xl hover:shadow-sky-500/30 transition-all duration-300 transform hover:-translate-y-0.5">
+                        LOGIN
+                    </button>
+
+                    {{-- GOOGLE --}}
+                <a href="{{ url('/auth/google') }}"
+                   class="w-full flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-slate-800 py-3.5 rounded-xl font-semibold mb-6 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 group">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    <span>Login dengan Google</span>
+                </a>
+                </form>
+
+                <p class="text-sm text-slate-400 mt-8 text-center">
+                    Belum punya akun?
+                    <a href="{{ route('register') }}" class="text-sky-400 font-semibold hover:text-sky-300 hover:underline transition-all">
+                        Register
+                    </a>
+                </p>
+
+            </div>
+            
+            <!-- Footer -->
+            <p class="text-center text-slate-600 text-xs mt-6">
+                © 2024 Inventory System. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    function refreshCaptcha(){
+        $.get("{{ route('refresh.captcha') }}", function(data){
+            $('#captcha-image').html(data.captcha);
+        });
+    }
+    </script>
+<!-- sebelum </body> -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
+
 </html>

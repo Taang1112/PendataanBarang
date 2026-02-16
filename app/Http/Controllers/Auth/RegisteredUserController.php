@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Supplier; // 🔥 TAMBAH
+use App\Models\Supplier; 
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -28,21 +28,21 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        // 🔥 BUAT USER + ROLE SUPPLIER
+        
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'supplier', // otomatis supplier
+            'role' => 'supplier', 
         ]);
 
-        // 🔥 OTOMATIS BUAT DATA SUPPLIER
+        
         Supplier::create([
             'NamaSupplier' => $user->name,
             'Email' => $user->email,
         ]);
 
-        // ================= EMAIL =================
+        
         Mail::send([], [], function ($message) use ($user) {
 
             $html = '

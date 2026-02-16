@@ -32,10 +32,10 @@ class ProfileController extends Controller
             $user->password = Hash::make($request->password);
         }
 
-        // Upload foto baru
+        
         if ($request->hasFile('photo')) {
 
-            // Hapus foto lama kalau ada
+            
             if ($user->photo && Storage::exists('public/photos/' . $user->photo)) {
                 Storage::delete('public/photos/' . $user->photo);
             }

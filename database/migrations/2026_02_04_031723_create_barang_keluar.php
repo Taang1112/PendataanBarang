@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateBarangKeluar extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
             Schema::create('barang_keluar', function (Blueprint $table) {
@@ -24,7 +20,7 @@ class CreateBarangKeluar extends Migration
             
                 $table->timestamps();
             
-                // 🔥 FOREIGN KEY SESUAI TABEL LU
+                
                 $table->foreign('BarangID')
                       ->references('BarangID')
                       ->on('barangs')
@@ -34,11 +30,7 @@ class CreateBarangKeluar extends Migration
         
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('barang_keluar');

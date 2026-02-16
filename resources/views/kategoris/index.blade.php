@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid px-4">
 
-    <!-- Header Section -->
+    
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
             <h1 class="h3 mb-0 text-gray-800">Data Kategori</h1>
@@ -14,7 +14,7 @@
         </a>
     </div>
 
-    {{-- FILTER + SEARCH --}}
+    
     <form method="GET" class="p-3">
         <div class="input-group">
             <input type="text" name="search" class="form-control"
@@ -25,11 +25,11 @@
     </form>
     
 
-    <!-- Card Container -->
+    
     <div class="card shadow border-0">
         <div class="card-body p-0">
             
-            <!-- Table -->
+            
             <div class="table-responsive">
                 <table class="table table-hover mb-0">
                     <thead class="bg-light">
@@ -56,13 +56,13 @@
                             </td>
                             <td>
                                 <div class="d-flex justify-content-center gap-2 pe-4">
-                                    <!-- Edit Link -->
+                                    
                                     <a href="{{ route('kategoris.edit', $kategori->KategoriID) }}" 
                                        class="btn btn-sm btn-outline-primary">
                                         <i class="fas fa-edit me-1"></i>Edit
                                     </a>
                                     
-                                    <!-- Delete Form -->
+                                    
                                     <form action="{{ route('kategoris.destroy', $kategori->KategoriID) }}" 
                                           method="POST" 
                                           class="d-inline"
@@ -157,7 +157,7 @@
 </style>
 
 <script>
-    // Initialize tooltips
+    
     document.addEventListener('DOMContentLoaded', function() {
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {

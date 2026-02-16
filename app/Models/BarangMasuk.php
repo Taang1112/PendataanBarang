@@ -19,13 +19,13 @@ class BarangMasuk extends Model
         'Keterangan'
     ];
 
-    // 🔗 Relasi ke Barang
+    
     public function barang()
     {
         return $this->belongsTo(Barang::class, 'BarangID', 'BarangID');
     }
 
-    // 🔗 Relasi ke Supplier
+    
     public function supplier()
     {
         return $this->belongsTo(Supplier::class, 'SupplierID', 'SupplierID');

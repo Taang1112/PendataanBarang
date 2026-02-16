@@ -50,15 +50,15 @@ class BarangKeluarController extends Controller
 
         $barang = Barang::findOrFail($request->BarangID);
 
-        // ❌ Cegah stok minus
+        
         if ($request->JumlahKeluar > $barang->Stock) {
             return back()->with('error', 'Stok tidak cukup!');
         }
 
-        // Simpan barang keluar
+        
         BarangKeluar::create($request->all());
 
-        // Kurangi stok
+        
         $barang->decrement('Stock', $request->JumlahKeluar);
 
         return redirect()->route('barang-keluar.index')
@@ -69,7 +69,7 @@ class BarangKeluarController extends Controller
     {
         $data = BarangKeluar::findOrFail($id);
 
-        // Balikin stok kalau dihapus
+        
         $barang = Barang::find($data->BarangID);
         $barang->increment('Stock', $data->JumlahKeluar);
 

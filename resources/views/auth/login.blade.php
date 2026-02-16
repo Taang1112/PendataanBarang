@@ -7,7 +7,7 @@
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     
-    <!-- Lottie Player -->
+    
    
 
     <style>
@@ -38,19 +38,19 @@
 <body class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex relative overflow-x-hidden overflow-y-auto">
 
 
-    <!-- Animated background elements -->
+    
     <div class="absolute inset-0 overflow-hidden">
         <div class="absolute -top-40 -right-40 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
         <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
     </div>
 
-    <!-- LEFT SIDE -->
+    
     <div class="hidden lg:flex w-1/2 items-center justify-center relative">
         <div class="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-indigo-500/10 to-purple-500/10"></div>
         
         <div class="text-center px-12 relative z-10">
-            <!-- Lottie Animation - Inventory Management -->
+            
 <div class="inline-block mb-8">
     <lottie-player
     src="https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json"
@@ -94,13 +94,13 @@
         </div>
     </div>
 
-    <!-- RIGHT SIDE -->
+    
     <div class="w-full lg:w-1/2 flex items-center justify-center px-6 relative z-10">
         <div class="w-full max-w-md transform transition-all duration-300 hover:scale-[1.02]">
-            <!-- Card dengan efek glass morphism -->
+            
             <div class="glass-morphism rounded-3xl p-8 shadow-2xl">
                 
-                <!-- Header dengan stripe gradient -->
+                
                 <div class="flex items-center gap-2 mb-8">
                     <div class="h-8 w-1 bg-gradient-to-b from-sky-500 via-indigo-500 to-purple-500 rounded-full"></div>
                     <div>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
 
-                {{-- ERROR --}}
+                
                 @if ($errors->any())
                     <div class="bg-red-950/50 border border-red-800/50 text-red-300 p-4 rounded-xl mb-6 text-sm flex items-center gap-3 backdrop-blur-sm">
                         <svg class="w-5 h-5 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,7 +155,7 @@
                             class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-3.5 text-white placeholder-slate-500 focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 transition-all duration-200">
                     </div>
 
-                    <!-- CAPTCHA -->
+                    
                     <div class="space-y-3">
                         <div class="bg-slate-900/50 border border-slate-700 rounded-xl p-4 flex items-center justify-between">
                             <div id="captcha-image" class="bg-white/5 rounded-lg overflow-hidden">{!! captcha_img() !!}</div>
@@ -179,7 +179,7 @@
                         LOGIN
                     </button>
 
-                    {{-- GOOGLE --}}
+                    
                 <a href="{{ url('/auth/google') }}"
                    class="w-full flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-slate-800 py-3.5 rounded-xl font-semibold mb-6 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 group">
                     <svg class="w-5 h-5" viewBox="0 0 24 24">
@@ -201,7 +201,7 @@
 
             </div>
             
-            <!-- Footer -->
+            
             <p class="text-center text-slate-600 text-xs mt-6">
                 © 2024 Inventory System. All rights reserved.
             </p>
@@ -216,7 +216,7 @@
         });
     }
     </script>
-<!-- sebelum </body> -->
+
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 

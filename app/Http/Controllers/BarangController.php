@@ -34,7 +34,7 @@ class BarangController extends Controller
         return view('barangs.index', compact('barangs','kategoris'));
     }
 
-    /* ================= CREATE (YANG TADI HILANG) ================= */
+    
     public function create()
     {
         $kategoris = Kategori::all();

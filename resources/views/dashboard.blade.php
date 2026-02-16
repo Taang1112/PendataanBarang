@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en">
-  <!--begin::Head-->
+  
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>AdminLTE v4 | Dashboard</title>
-    <!--begin::Accessibility Meta Tags-->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     
     <meta name="theme-color" content="#007bff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
-    <!--end::Accessibility Meta Tags-->
-    <!--begin::Primary Meta Tags-->
+    
+    
     <meta name="title" content="AdminLTE v4 | Dashboard" />
     <meta name="author" content="ColorlibHQ" />
     <meta
@@ -21,9 +21,9 @@
       name="keywords"
       content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard, accessible admin panel, WCAG compliant"
     />
-    <!--end::Primary Meta Tags-->
     
-    <!-- CSS TEMA DARK BLUE -->
+    
+    
     <style>
         :root {
             --primary-dark: #0a192f;
@@ -38,7 +38,7 @@
             --gradient-dark: linear-gradient(to bottom right, #0f172a, #1e293b);
         }
 
-        /* OVERRIDE UTAMA */
+        
         body {
             background: var(--gradient-dark) !important;
             color: var(--text-primary) !important;
@@ -46,7 +46,7 @@
             min-height: 100vh;
         }
 
-        /* BACKGROUND ELEGANT */
+        
         body::before {
             content: '';
             position: fixed;
@@ -60,7 +60,7 @@
             z-index: -1;
         }
 
-        /* HEADER */
+        
         .main-header {
             background: rgba(10, 25, 47, 0.85) !important;
             backdrop-filter: blur(10px) !important;
@@ -81,19 +81,19 @@
             background: rgba(100, 255, 218, 0.1) !important;
         }
 
-        /* SIDEBAR */
+        
         .sidebar {
             background: rgba(10, 25, 47, 0.9) !important;
             backdrop-filter: blur(15px) !important;
             border-right: 1px solid rgba(100, 255, 218, 0.1) !important;
         }
 
-        /* CONTENT AREA */
+        
         .app-content {
             background: transparent !important;
         }
 
-        /* CARD */
+        
         .card {
             background: rgba(17, 34, 64, 0.8) !important;
             border: 1px solid rgba(100, 255, 218, 0.15) !important;
@@ -107,7 +107,7 @@
             color: var(--accent-blue) !important;
         }
 
-        /* SMALL BOX */
+        
         .small-box {
             background: rgba(17, 34, 64, 0.8) !important;
             border: 1px solid rgba(100, 255, 218, 0.15) !important;
@@ -139,14 +139,14 @@
             background: rgba(100, 255, 218, 0.1) !important;
         }
 
-        /* WARNA BOX */
+        
         .small-box.text-bg-primary { border-left: 4px solid #3b82f6 !important; }
         .small-box.text-bg-success { border-left: 4px solid #10b981 !important; }
         .small-box.text-bg-info { border-left: 4px solid #0ea5e9 !important; }
         .small-box.text-bg-warning { border-left: 4px solid #f59e0b !important; }
         .small-box.text-bg-danger { border-left: 4px solid #ef4444 !important; }
 
-        /* FOOTER */
+        
         .app-footer {
             background: rgba(10, 25, 47, 0.85) !important;
             backdrop-filter: blur(10px) !important;
@@ -154,7 +154,7 @@
             color: var(--text-secondary) !important;
         }
 
-        /* TABLE */
+        
         .table {
             color: var(--text-primary) !important;
         }
@@ -168,7 +168,7 @@
             border-color: rgba(100, 255, 218, 0.05) !important;
         }
 
-        /* FORM */
+        
         .form-control, .form-select {
             background: rgba(17, 34, 64, 0.6) !important;
             border: 1px solid rgba(100, 255, 218, 0.1) !important;
@@ -180,7 +180,7 @@
             box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.1) !important;
         }
 
-        /* BREADCRUMB */
+        
         .breadcrumb {
             background: transparent !important;
         }
@@ -193,13 +193,13 @@
             color: var(--text-primary) !important;
         }
 
-        /* BUTTON */
+        
         .btn-primary {
             background: var(--gradient-blue) !important;
             border: none !important;
         }
         
-        /* SCROLLBAR */
+        
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -222,16 +222,16 @@
     </style>
     
 
-    <!--begin::Accessibility Features-->
-    <!-- Skip links will be dynamically added by accessibility.js -->
+    
+    
     
     <link rel="preload" href="{{ asset('css/adminlte.css')}}" as="style" />
-    <!--end::Accessibility Features-->
     
-    <!-- Font Inter -->
+    
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!--begin::Fonts-->
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
@@ -240,32 +240,32 @@
       media="print"
       onload="this.media='all'"
     />
-    <!--end::Fonts-->
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css"
       crossorigin="anonymous"
     />
-    <!--end::Third Party Plugin(OverlayScrollbars)-->
-    <!--begin::Third Party Plugin(Bootstrap Icons)-->
+    
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
       crossorigin="anonymous"
     />
-    <!--end::Third Party Plugin(Bootstrap Icons)-->
-    <!--begin::Required Plugin(AdminLTE)-->
+    
+    
     <link rel="stylesheet" href="{{ asset('css/adminlte.css')}}" />
-    <!--end::Required Plugin(AdminLTE)-->
-    <!-- apexcharts -->
+    
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
       integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0="
       crossorigin="anonymous"
     />
-    <!-- jsvectormap -->
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
@@ -273,7 +273,7 @@
       crossorigin="anonymous"
     />
     <style>
-/* FORCE DARK FORM — OVERRIDE ADMINLTE & BS5 */
+
 
 .form-control,
 .form-select,
@@ -296,82 +296,82 @@ textarea.form-control:focus {
     color: #fff !important;
 }
 
-/* Label */
+
 .form-label {
     color: #cfe9ff !important;
 }
 
-/* Input group Rp */
+
 .input-group-text {
     background-color: #0f223a !important;
     border: 1px solid rgba(100,255,218,.15) !important;
     color: #64ffda !important;
 }
 
-/* Textarea height */
+
 textarea.form-control {
     min-height: 120px !important;
 }
 </style>
 
   </head>
-  <!--end::Head-->
   
-  <!--begin::Body-->
+  
+  
   <body class="layout-fixed sidebar-expand-lg sidebar-open" data-bs-theme="dark">
 
-    <!--begin::App Wrapper-->
+    
     <div class="app-wrapper">
-      <!--begin::Header-->
+      
      @include('layouts.navbar')
-      <!--end::Header-->
-      <!--begin::Sidebar-->
+      
+      
      @include('layouts.sidebar')
-      <!--end::Sidebar-->
-      <!--begin::App Main-->
+      
+      
       <div class="app-content">
           @yield('content')
           @if(Request::is('dashboard') || Request::is('/'))
             @include('layouts.content')
             @endif
       </div>
-      <!--end::App Main-->
-      <!--begin::Footer-->
+      
+      
       <footer class="app-footer">
-        <!--begin::To the end-->
+        
         <div class="float-end d-none d-sm-inline">Anything you want</div>
-        <!--end::To the end-->
-        <!--begin::Copyright-->
+        
+        
         <strong>
           Copyright &copy; 2014-2025&nbsp;
           <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
         </strong>
         All rights reserved.
-        <!--end::Copyright-->
+        
       </footer>
-      <!--end::Footer-->
+      
     </div>
-    <!--end::App Wrapper-->
     
-    <!--begin::Script-->
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    
+    
+    
     <script
       src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
       crossorigin="anonymous"
     ></script>
-    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+    
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       crossorigin="anonymous"
     ></script>
-    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
       crossorigin="anonymous"
     ></script>
-    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+    
     <script src="{{ asset('js/adminlte.js')}}"></script>
-    <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+    
     <script>
       const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
       const Default = {
@@ -392,14 +392,14 @@ textarea.form-control {
         }
       });
     </script>
-    <!--end::OverlayScrollbars Configure-->
-    <!-- OPTIONAL SCRIPTS -->
-    <!-- sortablejs -->
+    
+    
+    
     <script
       src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
       crossorigin="anonymous"
     ></script>
-    <!-- sortablejs -->
+    
     <script>
       new Sortable(document.querySelector('.connectedSortable'), {
         group: 'shared',
@@ -411,17 +411,17 @@ textarea.form-control {
         cardHeader.style.cursor = 'move';
       });
     </script>
-    <!-- apexcharts -->
+    
     <script
       src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js"
       integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8="
       crossorigin="anonymous"
     ></script>
-    <!-- ChartJS -->
+    
     <script>
-      // NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
-      // IT'S ALL JUST JUNK FOR DEMO
-      // ++++++++++++++++++++++++++++++++++++++++++
+      
+      
+      
 
       const sales_chart_options = {
         series: [
@@ -476,7 +476,7 @@ textarea.form-control {
       );
       sales_chart.render();
     </script>
-    <!-- jsvectormap -->
+    
     <script
       src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"
       integrity="sha256-/t1nN2956BT869E6H4V1dnt0X5pAQHPytli+1nTZm2Y="
@@ -487,15 +487,15 @@ textarea.form-control {
       integrity="sha256-XPpPaZlU8S/HWf7FZLAncLg2SAkP8ScUTII89x9D3lY="
       crossorigin="anonymous"
     ></script>
-    <!-- jsvectormap -->
+    
     <script>
-      // World map by jsVectorMap
+      
       new jsVectorMap({
         selector: '#world-map',
         map: 'world',
       });
 
-      // Sparkline charts
+      
       const option_sparkline1 = {
         series: [
           {
@@ -580,7 +580,7 @@ textarea.form-control {
       const sparkline3 = new ApexCharts(document.querySelector('#sparkline-3'), option_sparkline3);
       sparkline3.render();
     </script>
-    <!--end::Script-->
+    
   </body>
-  <!--end::Body-->
+  
 </html>

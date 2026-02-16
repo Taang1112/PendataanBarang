@@ -49,8 +49,8 @@ class BarangMasukExport implements
     public function styles(Worksheet $sheet)
     {
         return [
-            1 => ['font' => ['bold' => true, 'size' => 16]], // Judul
-            3 => ['font' => ['bold' => true]], // Header tabel
+            1 => ['font' => ['bold' => true, 'size' => 16]], 
+            3 => ['font' => ['bold' => true]], 
         ];
     }
 }

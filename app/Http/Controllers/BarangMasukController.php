@@ -19,7 +19,7 @@ class BarangMasukController extends Controller
 {
     public function __construct()
     {
-        // Hanya supplier yang boleh akses create, store, destroy
+        
         $this->middleware('role:supplier')->only(['create', 'store', 'destroy']);
     }
 
@@ -63,21 +63,21 @@ class BarangMasukController extends Controller
         'TanggalMasuk' => 'required|date',
     ]);
 
-    // SIMPAN & MASUKIN KE VARIABEL
+    
     $barangMasuk = BarangMasuk::create($request->all());
 
-    // Update stok
+    
     $barang = Barang::find($request->BarangID);
     $barang->Stock += $request->JumlahMasuk;
     $barang->save();
 
-    // 🔥 LOAD RELASI BIAR BISA DIPAKE DI EMAIL
+    
     $barangMasuk->load(['barang.kategori','supplier']);
 
-    // Ambil semua admin
+    
     $admins = User::where('role', 'admin')->pluck('email');
 
-    // Kirim email
+    
     foreach ($admins as $email) {
         Mail::to($email)->send(new BarangMasukNotif($barangMasuk));
     }
@@ -90,7 +90,7 @@ class BarangMasukController extends Controller
     {
         $data = BarangMasuk::findOrFail($id);
 
-        // Kurangi stok
+        
         $barang = Barang::find($data->BarangID);
         $barang->Stock -= $data->JumlahMasuk;
         $barang->save();

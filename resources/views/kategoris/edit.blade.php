@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid px-4">
 
-    <!-- Header Section -->
+    
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
             <h1 class="h3 mb-0 text-gray-800">Edit Kategori</h1>
@@ -14,7 +14,7 @@
         </a>
     </div>
 
-    <!-- Alert Notifications -->
+    
     @if ($errors->any())
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <i class="fas fa-exclamation-circle me-2"></i>
@@ -28,7 +28,7 @@
     </div>
     @endif
 
-    <!-- Form Card -->
+    
     <div class="card shadow border-0">
         <div class="card-body">
             <form action="{{ route('kategoris.update', $kategori->KategoriID) }}" method="POST">
@@ -36,7 +36,7 @@
                 @method('PUT')
                 
                 <div class="row">
-                    <!-- Nama Kategori -->
+                    
                     <div class="col-md-6 mb-4">
                         <label for="NamaKategori" class="form-label fw-semibold">
                             <i class="fas fa-tag me-2 text-primary"></i>Nama Kategori
@@ -51,7 +51,7 @@
                     </div>
                 </div>
 
-                <!-- Deskripsi -->
+                
                 <div class="mb-4">
                     <label for="Deskripsi" class="form-label fw-semibold">
                         <i class="fas fa-align-left me-2 text-primary"></i>Deskripsi
@@ -66,7 +66,7 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons -->
+                
                 <div class="d-flex justify-content-end gap-3 mt-4 pt-3 border-top">
                     <a href="{{ route('kategoris.index') }}" class="btn btn-outline-secondary">
                         <i class="fas fa-times me-2"></i>Batal
@@ -114,7 +114,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Character counter for description
+        
         const descTextarea = document.getElementById('Deskripsi');
         const charCount = document.getElementById('charCount');
         
@@ -131,7 +131,7 @@
             }
         });
         
-        // Trigger input event to update counter
+        
         descTextarea.dispatchEvent(new Event('input'));
     });
 </script>

@@ -54,14 +54,14 @@
             z-index: -1;
         }
 
-        /* MAIN CONTAINER */
+        
         .app-main {
             padding: 20px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        /* HEADER SECTION */
+        
         .app-content-header {
             margin-bottom: 30px;
             padding: 20px 0;
@@ -108,7 +108,7 @@
             color: var(--text-primary);
         }
 
-        /* STATS GRID */
+        
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -151,7 +151,7 @@
             height: 6px;
         }
 
-        /* Warna khusus untuk setiap stat card */
+        
         .stat-card-primary::before { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
         .stat-card-success::before { background: linear-gradient(90deg, #10b981, #34d399); }
         .stat-card-info::before { background: linear-gradient(90deg, #0ea5e9, #38bdf8); }
@@ -205,7 +205,7 @@
             gap: 8px;
         }
 
-        /* CHART SECTION */
+        
         .chart-section {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -247,7 +247,7 @@
             position: relative;
         }
 
-        /* INFO CARD */
+        
         .info-card {
             background: rgba(17, 34, 64, 0.8);
             border-radius: 16px;
@@ -308,7 +308,7 @@
             font-weight: 600;
         }
 
-        /* RESPONSIVE */
+        
         @media (max-width: 1200px) {
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -379,7 +379,7 @@
 <body>
     <main class="app-main">
 
-        <!-- HEADER -->
+        
         <div class="app-content-header">
             <div class="header-content">
                 <h3>Dashboard</h3>
@@ -390,9 +390,9 @@
             </div>
         </div>
 
-        <!-- STATS GRID -->
+        
         <div class="stats-grid">
-            <!-- Total Barang -->
+            
             <div class="stat-card stat-card-primary">
                 <div class="stat-content">
                     <div class="stat-value">{{ $totalBarang }}</div>
@@ -405,7 +405,7 @@
                 </div>
             </div>
 
-            <!-- Total Kategori -->
+            
             <div class="stat-card stat-card-success">
                 <div class="stat-content">
                     <div class="stat-value">{{ $totalKategori }}</div>
@@ -418,7 +418,7 @@
                 </div>
             </div>
 
-            <!-- Total Supplier -->
+            
             <div class="stat-card stat-card-info">
                 <div class="stat-content">
                     <div class="stat-value">{{ $totalSupplier }}</div>
@@ -431,7 +431,7 @@
                 </div>
             </div>
 
-            <!-- Total Stok Barang -->
+            
             <div class="stat-card stat-card-warning">
                 <div class="stat-content">
                     <div class="stat-value">{{ $totalStok }}</div>
@@ -444,7 +444,7 @@
                 </div>
             </div>
 
-            <!-- Total Nilai Barang -->
+            
             <div class="stat-card stat-card-danger">
                 <div class="stat-content">
                     <div class="stat-value">Rp {{ number_format($totalNilai,0,',','.') }}</div>
@@ -457,7 +457,7 @@
                 </div>
             </div>
 
-            <!-- Barang Masuk Hari Ini -->
+            
             <div class="stat-card stat-card-success">
                 <div class="stat-content">
                     <div class="stat-value">{{ $masukHariIni }}</div>
@@ -470,7 +470,7 @@
                 </div>
             </div>
 
-            <!-- Barang Keluar Hari Ini -->
+            
             <div class="stat-card stat-card-danger">
                 <div class="stat-content">
                     <div class="stat-value">{{ $keluarHariIni }}</div>
@@ -484,9 +484,9 @@
             </div>
         </div>
 
-        <!-- CHART & INFO SECTION -->
+        
         <div class="chart-section">
-            <!-- Grafik -->
+            
             <div class="chart-card">
                 <div class="chart-header">
                     <h3>Grafik Barang per Kategori</h3>
@@ -496,7 +496,7 @@
                 </div>
             </div>
 
-            <!-- Info Sistem -->
+            
             <div class="info-card">
                 <div class="info-header">
                     <h3>Info Sistem</h3>
@@ -530,7 +530,7 @@
 
     </main>
 
-    <!-- CHART SCRIPT -->
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const labels = @json($grafikKategori->pluck('NamaKategori'));
@@ -538,7 +538,7 @@
             
             const ctx = document.getElementById('kategoriChart').getContext('2d');
             
-            // Gradient untuk chart
+            
             const gradient = ctx.createLinearGradient(0, 0, 0, 300);
             gradient.addColorStop(0, 'rgba(100, 255, 218, 0.8)');
             gradient.addColorStop(1, 'rgba(37, 99, 235, 0.3)');

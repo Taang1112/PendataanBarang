@@ -1,7 +1,7 @@
 <aside class="app-sidebar shadow" data-bs-theme="dark">
 
   <style>
-    /* TEMA DARK BLUE UNTUK SIDEBAR */
+    
     .app-sidebar {
       background: rgba(10, 25, 47, 0.9) !important;
       backdrop-filter: blur(15px) !important;
@@ -101,7 +101,7 @@
     }
   </style>
 
-  <!-- Sidebar Brand -->
+  
   <div class="sidebar-brand">
     <a href="{{ route('dashboard') }}" class="brand-link">
       <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image opacity-75 shadow" />
@@ -109,12 +109,12 @@
     </a>
   </div>
 
-  <!-- Sidebar -->
+  
   <div class="sidebar-wrapper">
     <nav class="mt-2">
       <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="navigation" aria-label="Main navigation" data-accordion="false">
 
-        <!-- DASHBOARD (SEMUA ROLE) -->
+        
         <li class="nav-item">
           <a href="{{ route('dashboard') }}" class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}">
             <i class="nav-icon bi bi-speedometer"></i>
@@ -122,7 +122,7 @@
           </a>
         </li>
 
-        {{-- ================= ADMIN ONLY ================= --}}
+        
         @if(auth()->user()->role === 'admin')
         <li class="nav-item">
           <a href="{{ route('barangs.index') }}" class="nav-link {{ request()->is('barangs*') ? 'active' : '' }}">
@@ -143,7 +143,7 @@
           </a>
         </li>
 
-        {{-- Admin bisa liat index barang masuk (read-only) --}}
+        
         <li class="nav-item">
           <a href="{{ route('barang-masuk.index') }}" class="nav-link {{ request()->is('barang-masuk') ? 'active' : '' }}">
             <i class="nav-icon bi bi-box-arrow-in-down"></i>
@@ -159,7 +159,7 @@
         </li>
         @endif
 
-        {{-- ================= SUPPLIER ONLY ================= --}}
+        
         @if(auth()->user()->role === 'supplier')
         <li class="nav-item">
           <a href="{{ route('barang-masuk.index') }}" class="nav-link {{ request()->is('barang-masuk*') ? 'active' : '' }}">
@@ -169,7 +169,7 @@
         </li>
         @endif
 
-        <!-- Divider -->
+        
         <li class="nav-header text-uppercase mt-3">Account</li>
         <li class="nav-item">
           <form method="POST" action="{{ route('logout') }}">

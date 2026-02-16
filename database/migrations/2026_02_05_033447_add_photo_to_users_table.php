@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class AddPhotoToUsersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
 {
     Schema::table('users', function (Blueprint $table) {
@@ -20,15 +16,11 @@ class AddPhotoToUsersTable extends Migration
 
     
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            
         });
     }
 }

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid px-4">
 
-    <!-- Header Section -->
+    
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
             <h1 class="h3 mb-0 text-gray-800">Catat Barang Keluar</h1>
@@ -14,7 +14,7 @@
         </a>
     </div>
 
-    <!-- Alert Notifications -->
+    
     @if ($errors->any())
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <i class="fas fa-exclamation-circle me-2"></i>
@@ -28,14 +28,14 @@
     </div>
     @endif
 
-    <!-- Form Card -->
+    
     <div class="card shadow border-0">
         <div class="card-body">
             <form action="{{ route('barang-keluar.store') }}" method="POST">
                 @csrf
                 
                 <div class="row">
-                    <!-- Barang -->
+                    
                     <div class="col-md-6 mb-4">
                         <label for="BarangID" class="form-label fw-semibold">
                             <i class="fas fa-box me-2 text-primary"></i>Barang
@@ -53,7 +53,7 @@
                         <small class="text-muted">Stok tersedia: <span id="currentStock">0</span> pcs</small>
                     </div>
 
-                    <!-- Jumlah Keluar -->
+                    
                     <div class="col-md-3 mb-4">
                         <label for="JumlahKeluar" class="form-label fw-semibold">
                             <i class="fas fa-arrow-up me-2 text-primary"></i>Jumlah Keluar
@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <!-- Tanggal Keluar -->
+                    
                     <div class="col-md-3 mb-4">
                         <label for="TanggalKeluar" class="form-label fw-semibold">
                             <i class="fas fa-calendar me-2 text-primary"></i>Tanggal Keluar
@@ -85,7 +85,7 @@
                     </div>
                 </div>
 
-                <!-- Stock setelah keluar (calculated) -->
+                
                 <div class="row mb-4">
                     <div class="col-md-6">
                         <div class="alert alert-info">
@@ -106,7 +106,7 @@
                     </div>
                 </div>
 
-                <!-- Keterangan -->
+                
                 <div class="mb-4">
                     <label for="Keterangan" class="form-label fw-semibold">
                         <i class="fas fa-align-left me-2 text-primary"></i>Keterangan
@@ -118,7 +118,7 @@
                               placeholder="Alasan/tujuan pengeluaran barang (opsional)">{{ old('Keterangan') }}</textarea>
                 </div>
 
-                <!-- Action Buttons -->
+                
                 <div class="d-flex justify-content-end gap-3 mt-4 pt-3 border-top">
                     <a href="{{ route('barang-keluar.index') }}" class="btn btn-outline-secondary">
                         <i class="fas fa-times me-2"></i>Batal
@@ -190,11 +190,11 @@
             const jumlah = parseInt(jumlahInput.value) || 0;
             const stockAfter = currentStock - jumlah;
             
-            // Update displays
+            
             currentStockSpan.textContent = currentStock;
             stockAfterSpan.textContent = stockAfter;
             
-            // Color coding
+            
             if (stockAfter < 0) {
                 stockAfterSpan.className = 'text-danger';
                 stockWarningDiv.style.display = 'block';
@@ -211,7 +211,7 @@
                 jumlahInput.classList.remove('is-invalid');
             }
             
-            // Update stock after color
+            
             if (stockAfter < 0) {
                 stockAfterSpan.className = 'text-danger';
             } else if (stockAfter < 10) {
@@ -221,18 +221,18 @@
             }
         }
         
-        // Event listeners
+        
         barangSelect.addEventListener('change', updateStockInfo);
         jumlahInput.addEventListener('input', updateStockInfo);
         
-        // Initialize
+        
         updateStockInfo();
         
-        // Set default date to today
+        
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('TanggalKeluar').value = today;
         
-        // Form validation
+        
         document.querySelector('form').addEventListener('submit', function(e) {
             const selectedOption = barangSelect.options[barangSelect.selectedIndex];
             const currentStock = parseInt(selectedOption.getAttribute('data-stock')) || 0;

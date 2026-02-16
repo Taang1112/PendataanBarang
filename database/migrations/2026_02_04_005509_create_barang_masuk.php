@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateBarangMasuk extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
         Schema::create('barang_masuk', function (Blueprint $table) {
@@ -29,11 +25,7 @@ class CreateBarangMasuk extends Migration
          
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('barang_masuk');

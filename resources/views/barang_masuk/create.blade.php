@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid px-4">
 
-    <!-- Header Section -->
+    
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
             <h1 class="h3 mb-0 text-gray-800">Tambah Barang Masuk</h1>
@@ -14,7 +14,7 @@
         </a>
     </div>
 
-    <!-- Alert Notifications -->
+    
     @if ($errors->any())
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <i class="fas fa-exclamation-circle me-2"></i>
@@ -28,14 +28,14 @@
     </div>
     @endif
 
-    <!-- Form Card -->
+    
     <div class="card shadow border-0">
         <div class="card-body">
             <form action="{{ route('barang-masuk.store') }}" method="POST">
                 @csrf
                 
                 <div class="row">
-                    <!-- Barang -->
+                    
                     <div class="col-md-6 mb-4">
                         <label for="BarangID" class="form-label fw-semibold">
                             <i class="fas fa-box me-2 text-primary"></i>Barang
@@ -50,7 +50,7 @@
                         </select>
                     </div>
 
-                    <!-- Supplier -->
+                    
                     <div class="col-md-6 mb-4">
                         <label for="SupplierID" class="form-label fw-semibold">
                             <i class="fas fa-truck me-2 text-primary"></i>Supplier
@@ -67,7 +67,7 @@
                 </div>
 
                 <div class="row">
-                    <!-- Jumlah Masuk -->
+                    
                     <div class="col-md-4 mb-4">
                         <label for="JumlahMasuk" class="form-label fw-semibold">
                             <i class="fas fa-arrow-down me-2 text-primary"></i>Jumlah Masuk
@@ -85,7 +85,7 @@
                         </div>
                     </div>
 
-                    <!-- Tanggal Masuk -->
+                    
                     <div class="col-md-4 mb-4">
                         <label for="TanggalMasuk" class="form-label fw-semibold">
                             <i class="fas fa-calendar me-2 text-primary"></i>Tanggal Masuk
@@ -98,7 +98,7 @@
                                required>
                     </div>
 
-                    <!-- Stock setelah tambah (calculated) -->
+                    
                     <div class="col-md-4 mb-4">
                         <label class="form-label fw-semibold text-muted">
                             <i class="fas fa-calculator me-2"></i>Stok Setelah Tambah
@@ -109,7 +109,7 @@
                     </div>
                 </div>
 
-                <!-- Keterangan -->
+                
                 <div class="mb-4">
                     <label for="Keterangan" class="form-label fw-semibold">
                         <i class="fas fa-align-left me-2 text-primary"></i>Keterangan
@@ -121,7 +121,7 @@
                               placeholder="Catatan tambahan (opsional)">{{ old('Keterangan') }}</textarea>
                 </div>
 
-                <!-- Action Buttons -->
+                
                 <div class="d-flex justify-content-end gap-3 mt-4 pt-3 border-top">
                     <a href="{{ route('barang-masuk.index') }}" class="btn btn-outline-secondary">
                         <i class="fas fa-times me-2"></i>Batal
@@ -182,7 +182,7 @@
         const jumlahInput = document.getElementById('JumlahMasuk');
         const stockAfterSpan = document.getElementById('stockAfter');
         
-        // Store barang stock data
+        
         const barangStocks = {
             @foreach($barangs as $b)
                 '{{ $b->BarangID }}': {{ $b->Stock }},
@@ -204,14 +204,14 @@
             }
         }
         
-        // Event listeners
+        
         barangSelect.addEventListener('change', calculateStockAfter);
         jumlahInput.addEventListener('input', calculateStockAfter);
         
-        // Initialize calculation
+        
         calculateStockAfter();
         
-        // Set default date to today
+        
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('TanggalMasuk').value = today;
     });

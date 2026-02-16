@@ -1,4 +1,5 @@
-FROM php:8.2-cli
+# Pakai PHP + Apache, lebih stabil untuk Laravel production
+FROM php:8.2-apache
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -11,25 +12,26 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     libzip-dev \
-    zip
+    zip \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install \
-    pdo \
-    pdo_mysql \
-    mbstring \
-    exif \
-    pcntl \
-    bcmath \
-    gd \
-    zip
+        pdo \
+        pdo_mysql \
+        mbstring \
+        exif \
+        pcntl \
+        bcmath \
+        gd \
+        zip
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Set working directory
-WORKDIR /var/www
+WORKDIR /var/www/html
 
 # Copy project files
 COPY . .
@@ -37,17 +39,20 @@ COPY . .
 # Install Laravel dependencies
 RUN composer install --no-interaction --optimize-autoloader --no-dev
 
-# Set permissions (biar storage & cache aman)
-RUN chmod -R 775 storage bootstrap/cache || true
+# Set permissions storage & cache
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 storage bootstrap/cache
 
-# Cache config & route (production ready)
+# Enable Apache rewrite module
+RUN a2enmod rewrite
+
+# Cache config, route, view (production ready)
 RUN php artisan config:cache || true
 RUN php artisan route:cache || true
 RUN php artisan view:cache || true
 
-# Expose Railway port
-EXPOSE 8080
+# Expose default Apache port
+EXPOSE 80
 
-# Run Laravel
-CMD sh -c "php artisan serve --host=0.0.0.0 --port=$PORT"
-
+# Start Apache in foreground
+CMD ["apache2-foreground"]

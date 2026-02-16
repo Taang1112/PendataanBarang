@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name') }} - Sistem Manajemen Inventaris Premium</title>
     
-    <!-- Tailwind CSS via CDN -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Awesome 6 Pro (menggunakan CDN gratis) -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts - Inter, Plus Jakarta Sans, Clash Display -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Clash+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- AOS Animation Library -->
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
@@ -51,7 +51,7 @@
             overflow-x: hidden;
         }
 
-        /* Custom Cursor Effect */
+        
         .cursor {
             width: 30px;
             height: 30px;
@@ -78,7 +78,7 @@
             opacity: 0;
         }
 
-        /* Premium Animations */
+        
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(2deg); }
@@ -116,7 +116,7 @@
         .animate-gradient { background-size: 200% 200%; animation: gradient-shift 8s ease infinite; }
         .animate-shimmer { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); background-size: 200% 100%; animation: shimmer 3s infinite; }
 
-        /* Premium Glassmorphism */
+        
         .glass-premium {
             background: rgba(10, 25, 47, 0.6);
             backdrop-filter: blur(16px) saturate(200%);
@@ -132,7 +132,7 @@
             border: 1px solid rgba(56, 189, 248, 0.1);
         }
 
-        /* Premium Card */
+        
         .card-premium {
             background: var(--card-bg);
             backdrop-filter: blur(12px);
@@ -167,7 +167,7 @@
             border-color: rgba(56, 189, 248, 0.3);
         }
 
-        /* Premium Button */
+        
         .btn-premium {
             position: relative;
             padding: 16px 36px;
@@ -245,7 +245,7 @@
             transform-origin: left;
         }
 
-        /* Premium Text Gradients */
+        
         .text-gradient-premium {
             background: linear-gradient(135deg, #ffffff, #38bdf8, #818cf8, #c084fc, #64ffda);
             -webkit-background-clip: text;
@@ -262,7 +262,7 @@
             color: transparent;
         }
 
-        /* Premium Navbar */
+        
         .navbar-premium {
             background: rgba(3, 7, 18, 0.8);
             backdrop-filter: blur(16px) saturate(200%);
@@ -274,7 +274,7 @@
             z-index: 100;
         }
 
-        /* Premium Link */
+        
         .nav-link {
             position: relative;
             color: var(--text-secondary);
@@ -302,7 +302,7 @@
             width: 100%;
         }
 
-        /* Premium Badge */
+        
         .badge-premium {
             display: inline-flex;
             align-items: center;
@@ -318,7 +318,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Premium Scrollbar */
+        
         ::-webkit-scrollbar {
             width: 10px;
             height: 10px;
@@ -338,7 +338,7 @@
             background: linear-gradient(135deg, #64ffda, #38bdf8);
         }
 
-        /* Premium Background Elements */
+        
         .background-container {
             position: fixed;
             inset: 0;
@@ -399,7 +399,7 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
         }
 
-        /* Animated Lines */
+        
         .line-top {
             position: absolute;
             top: 0;
@@ -421,7 +421,7 @@
             animation-delay: 1s;
         }
 
-        /* Rotating Rings */
+        
         .ring-container {
             position: absolute;
             width: 100%;
@@ -447,13 +447,13 @@
             animation: spin-slow 20s linear infinite reverse;
         }
 
-        /* Content Wrapper */
+        
         .content-wrapper {
             position: relative;
             z-index: 10;
         }
 
-        /* Responsive Improvements */
+        
         @media (max-width: 768px) {
             .orb-1, .orb-2, .orb-3 {
                 opacity: 0.2;
@@ -468,11 +468,11 @@
 </head>
 
 <body>
-    <!-- Custom Cursor -->
+    
     <div class="cursor" id="cursor"></div>
     <div class="cursor-follower" id="cursorFollower"></div>
 
-    <!-- BACKGROUND -->
+    
     <div class="background-container">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
@@ -480,11 +480,11 @@
         <div class="grid-pattern"></div>
         <div class="noise"></div>
         
-        <!-- Animated Lines -->
+        
         <div class="line-top"></div>
         <div class="line-bottom"></div>
         
-        <!-- Rotating Rings -->
+        
         <div class="ring-container">
             <svg class="ring-top-right" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(56, 189, 248, 0.1)" stroke-width="1"/>
@@ -500,9 +500,9 @@
         </div>
     </div>
 
-    <!-- CONTENT WRAPPER -->
+    
     <div class="content-wrapper">
-        <!-- NAVBAR PREMIUM -->
+        
         <nav class="navbar-premium sticky top-0 z-50 px-6 lg:px-20 py-5">
             <div class="max-w-7xl mx-auto flex justify-between items-center">
                 <div class="flex items-center gap-4 group" data-aos="fade-right" data-aos-duration="1000">
@@ -522,9 +522,9 @@
             </div>
         </nav>
 
-        <!-- HERO SECTION PREMIUM -->
+        
         <section class="relative px-6 lg:px-20 py-20 max-w-7xl mx-auto">
-            <!-- Hero Content -->
+            
             <div class="text-center max-w-4xl mx-auto mb-24">
                 <div class="badge-premium mx-auto mb-8 animate-slide-up" data-aos="fade-up" data-aos-duration="1000">
                     <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
@@ -563,38 +563,14 @@
                 </div>
             </div>
             
-            <!-- HERO GRAPHICS PREMIUM -->
+            
             <div class="relative mt-20">
-                <!-- FLOATING STATS CARDS - DIHAPUS KARENA NABRAK -->
-                <!-- 
-                <div class="absolute -top-10 -left-10 glass-premium-light rounded-2xl p-5 animate-float hidden lg:block" data-aos="fade-right" data-aos-duration="1500" style="z-index: 20;">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-boxes text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-bold text-white">{{ $totalBarang }}</div>
-                            <div class="text-sm text-[#94a3b8]">Total Items</div>
-                        </div>
-                    </div>
-                </div>
                 
-                <div class="absolute -bottom-10 -right-10 glass-premium-light rounded-2xl p-5 animate-float-reverse hidden lg:block" style="animation-delay: 2s; z-index: 20;" data-aos="fade-left" data-aos-duration="1500">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-chart-line text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-bold text-white">+47%</div>
-                            <div class="text-sm text-[#94a3b8]">Growth</div>
-                        </div>
-                    </div>
-                </div>
-                -->
                 
-                <!-- Main Dashboard Cards -->
+                
+                
                 <div class="flex flex-col lg:flex-row gap-8 justify-center items-stretch">
-                    <!-- Main Dashboard -->
+                    
                     <div class="flex-1 max-w-4xl card-premium rounded-3xl shadow-2xl overflow-hidden border border-sky-500/20" data-aos="fade-up" data-aos-duration="1500">
                         <div class="flex flex-wrap items-center justify-between gap-4 p-8 border-b border-sky-500/10 bg-gradient-to-r from-[#0a192f]/50 to-[#112240]/50">
                             <div class="flex items-center gap-4">
@@ -615,7 +591,7 @@
                         </div>
                         
                         <div class="flex flex-col md:flex-row h-[500px]">
-                            <!-- Categories Sidebar -->
+                            
                             <div class="w-full md:w-52 border-b md:border-b-0 md:border-r border-sky-500/10 overflow-y-auto custom-scrollbar bg-gradient-to-b from-[#0a192f]/30 to-[#112240]/30">
                                 @foreach($kategoris as $index => $kat)
                                 <div class="flex items-center gap-3 px-5 py-4 {{ $index == 0 ? 'bg-gradient-to-r from-sky-400/20 to-indigo-500/20 border-l-4 border-sky-400' : 'hover:bg-sky-400/5' }} transition-all cursor-pointer group">
@@ -628,7 +604,7 @@
                                 @endforeach
                             </div>
                             
-                            <!-- Inventory Grid -->
+                            
                             <div class="flex-1 p-6 overflow-y-auto custom-scrollbar">
                                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                     @foreach($barangs as $item)
@@ -672,7 +648,7 @@
                         </div>
                     </div>
                     
-                    <!-- Stats Sidebar Premium -->
+                    
                     <div class="w-full lg:w-96 card-premium rounded-3xl shadow-2xl overflow-hidden border border-sky-500/20 flex flex-col" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
                         <div class="p-8 border-b border-sky-500/10 bg-gradient-to-r from-[#0a192f]/50 to-[#112240]/50">
                             <div class="flex items-center gap-4 mb-3">
@@ -686,7 +662,7 @@
                         </div>
                         
                         <div class="flex-1 p-6 overflow-y-auto custom-scrollbar space-y-4">
-                            <!-- Stat Cards -->
+                            
                             <div class="glass-premium-light rounded-xl p-5 hover:bg-sky-400/5 transition-all group">
                                 <div class="flex items-center gap-4">
                                     <div class="w-14 h-14 bg-gradient-to-br from-sky-400 to-indigo-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -771,7 +747,7 @@
             </div>
         </section>
 
-        <!-- FEATURES SECTION PREMIUM -->
+        
         <section class="relative px-6 lg:px-20 py-24 max-w-7xl mx-auto" id="features">
             <div class="text-center max-w-3xl mx-auto mb-20">
                 <div class="badge-premium mx-auto mb-6" data-aos="fade-up" data-aos-duration="1000">
@@ -783,7 +759,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Feature Card 1 -->
+                
                 <div class="card-premium rounded-2xl p-8 border border-sky-500/10 relative overflow-hidden group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                     <div class="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="relative z-10">
@@ -796,7 +772,7 @@
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-sky-400 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </div>
                 
-                <!-- Feature Card 2 -->
+                
                 <div class="card-premium rounded-2xl p-8 border border-sky-500/10 relative overflow-hidden group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="relative z-10">
@@ -809,7 +785,7 @@
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </div>
                 
-                <!-- Feature Card 3 -->
+                
                 <div class="card-premium rounded-2xl p-8 border border-sky-500/10 relative overflow-hidden group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                     <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="relative z-10">
@@ -822,7 +798,7 @@
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </div>
                 
-                <!-- Feature Card 4 -->
+                
                 <div class="card-premium rounded-2xl p-8 border border-sky-500/10 relative overflow-hidden group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="relative z-10">
@@ -837,7 +813,7 @@
             </div>
         </section>
 
-        <!-- FOOTER PREMIUM -->
+        
         <footer class="relative mt-20 border-t border-sky-500/10">
             <div class="absolute inset-0 bg-gradient-to-t from-sky-500/5 to-transparent"></div>
             <div class="max-w-7xl mx-auto px-6 lg:px-20 py-16 relative z-10">
@@ -854,7 +830,7 @@
                     <p class="text-[#94a3b8] text-lg">© {{ date('Y') }} <span class="text-sky-400 font-semibold hover:text-sky-300 transition-colors">{{ config('app.name') }}</span> — Sistem Inventaris Berbasis Laravel</p>
                     <p class="text-[#94a3b8] text-base mt-4">Solusi terpadu untuk manajemen inventaris yang efisien dan modern</p>
                     
-                    <!-- Decorative Dots -->
+                    
                     <div class="flex justify-center gap-3 mt-8">
                         <div class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></div>
                         <div class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" style="animation-delay: 0.2s;"></div>
@@ -866,19 +842,19 @@
         </footer>
     </div>
 
-    <!-- AOS Animation Library -->
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Custom Cursor Script -->
+    
     <script>
-        // Initialize AOS
+        
         AOS.init({
             once: true,
             duration: 1000,
             easing: 'ease-out-cubic'
         });
 
-        // Custom Cursor
+        
         const cursor = document.querySelector('.cursor');
         const cursorFollower = document.querySelector('.cursor-follower');
 
@@ -895,7 +871,7 @@
             cursorFollower.style.opacity = '0';
         });
 
-        // Hover effect on interactive elements
+        
         const interactiveElements = document.querySelectorAll('a, button, .card-premium, .btn-premium');
         
         interactiveElements.forEach(el => {

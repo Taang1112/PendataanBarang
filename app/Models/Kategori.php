@@ -11,7 +11,7 @@ class Kategori extends Model
 
     protected $table = 'kategoris';
     protected $primaryKey = 'KategoriID';
-    public $incrementing = true;   // ⬅️ PENTING
+    public $incrementing = true;   
     protected $keyType = 'int';    
     protected $fillable = ['NamaKategori', 'Deskripsi'];
 }

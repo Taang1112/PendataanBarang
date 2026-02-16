@@ -7,14 +7,14 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
+        
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         
-        <!-- Styles -->
+        
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         
-        <!-- Tema Dark Blue -->
+        
         <style>
             :root {
                 --primary-dark: #0a192f;
@@ -51,7 +51,7 @@
                 z-index: -1;
             }
             
-            /* Header Styling */
+            
             header.bg-white.shadow {
                 background: rgba(10, 25, 47, 0.85) !important;
                 backdrop-filter: blur(10px) !important;
@@ -59,14 +59,14 @@
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
             }
             
-            /* Content Styling */
+            
             main {
                 padding: 20px;
                 max-width: 1400px;
                 margin: 0 auto;
             }
             
-            /* Container Styling */
+            
             .max-w-7xl {
                 max-width: 1400px !important;
             }
@@ -86,17 +86,17 @@
                 padding-right: 1rem !important;
             }
             
-            /* Text Styling */
+            
             h1, h2, h3, h4, h5, h6 {
                 color: var(--text-primary) !important;
             }
             
-            /* Utility Classes */
+            
             .bg-gray-100 {
                 background: transparent !important;
             }
             
-            /* Button Styling */
+            
             .btn-primary {
                 background: var(--gradient-blue) !important;
                 border: none !important;
@@ -112,7 +112,7 @@
                 box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3) !important;
             }
             
-            /* Card Styling */
+            
             .card {
                 background: rgba(17, 34, 64, 0.8) !important;
                 border: 1px solid rgba(100, 255, 218, 0.15) !important;
@@ -128,7 +128,7 @@
                 padding: 15px 20px !important;
             }
             
-            /* Form Styling */
+            
             input, select, textarea {
                 background: rgba(17, 34, 64, 0.6) !important;
                 border: 1px solid rgba(100, 255, 218, 0.1) !important;
@@ -143,7 +143,7 @@
                 outline: none !important;
             }
             
-            /* Table Styling */
+            
             table {
                 color: var(--text-primary) !important;
                 background: rgba(17, 34, 64, 0.6) !important;
@@ -166,7 +166,7 @@
                 padding: 12px 15px !important;
             }
             
-            /* Scrollbar Styling */
+            
             ::-webkit-scrollbar {
                 width: 8px;
                 height: 8px;
@@ -186,21 +186,21 @@
             }
         </style>
 
-        <!-- Scripts -->
+        
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen">
             @include('layouts.navigation')
 
-            <!-- Page Heading -->
+            
             <header class="shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
             </header>
 
-            <!-- Page Content -->
+            
             <main>
                 {{ $slot }}
             </main>

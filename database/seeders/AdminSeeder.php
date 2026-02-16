@@ -11,12 +11,12 @@ class AdminSeeder extends Seeder
     public function run()
     {
         User::updateOrCreate(
-            ['email' => 'admin@inventory.com'], // biar ga dobel
+            ['email' => 'admin@inventory.com'], 
             [
                 'name' => 'Administrator',
                 'email' => 'admin@inventory.com',
                 'password' => Hash::make('admin123'),
-                'role' => 'admin', // sesuaikan dengan kolom role di tabel users
+                'role' => 'admin', 
             ]
         );
     }

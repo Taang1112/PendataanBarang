@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid px-4">
 
-    <!-- Header Section -->
+    
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
             <h1 class="h3 mb-0 text-gray-800">Tambah Barang Baru</h1>
@@ -14,7 +14,7 @@
         </a>
     </div>
 
-    <!-- Alert Notifications -->
+    
     @if ($errors->any())
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <i class="fas fa-exclamation-circle me-2"></i>
@@ -28,16 +28,16 @@
     </div>
     @endif
 
-    <!-- Form Card -->
+    
     <div class="card shadow border-0">
         <div class="card-body">
             <form action="{{ route('barangs.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 
                 <div class="row">
-                    <!-- Left Column -->
+                    
                     <div class="col-md-6">
-                        <!-- Kategori -->
+                        
                         <div class="mb-4">
                             <label for="KategoriID" class="form-label fw-semibold">
                                 <i class="fas fa-tag me-2 text-primary"></i>Kategori
@@ -52,7 +52,7 @@
                             </select>
                         </div>
 
-                        <!-- Nama Barang -->
+                        
                         <div class="mb-4">
                             <label for="NamaBarang" class="form-label fw-semibold">
                                 <i class="fas fa-box me-2 text-primary"></i>Nama Barang
@@ -66,7 +66,7 @@
                                    required>
                         </div>
 
-                        <!-- Harga -->
+                        
                         <div class="mb-4">
                             <label for="Harga" class="form-label fw-semibold">
                                 <i class="fas fa-money-bill-wave me-2 text-primary"></i>Harga
@@ -84,7 +84,7 @@
                             </div>
                         </div>
 
-                        <!-- Stock -->
+                        
                         <div class="mb-4">
                             <label for="Stock" class="form-label fw-semibold">
                                 <i class="fas fa-layer-group me-2 text-primary"></i>Stock
@@ -100,9 +100,9 @@
                         </div>
                     </div>
 
-                    <!-- Right Column -->
+                    
                     <div class="col-md-6">
-                        <!-- Foto -->
+                        
                         <div class="mb-4">
                             <label for="Foto" class="form-label fw-semibold">
                                 <i class="fas fa-camera me-2 text-primary"></i>Foto Barang
@@ -114,14 +114,14 @@
                                    accept="image/*">
                             <small class="text-muted">Format: JPG, PNG, JPEG. Maks: 2MB</small>
                             
-                            <!-- Preview Image -->
+                            
                             <div class="mt-3" id="imagePreview" style="display: none;">
                                 <p class="mb-2 text-muted">Preview:</p>
                                 <img id="previewImage" class="img-thumbnail" style="max-width: 200px;">
                             </div>
                         </div>
 
-                        <!-- Deskripsi -->
+                        
                         <div class="mb-4">
                             <label for="Deskripsi" class="form-label fw-semibold">
                                 <i class="fas fa-align-left me-2 text-primary"></i>Deskripsi
@@ -139,7 +139,7 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons -->
+                
                 <div class="d-flex justify-content-end gap-3 mt-4 pt-3 border-top">
                     <a href="{{ route('barangs.index') }}" class="btn btn-outline-secondary">
                         <i class="fas fa-times me-2"></i>Batal
@@ -197,7 +197,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Image preview
+        
         const fotoInput = document.getElementById('Foto');
         const previewImage = document.getElementById('previewImage');
         const imagePreview = document.getElementById('imagePreview');
@@ -217,7 +217,7 @@
             }
         });
         
-        // Character counter for description
+        
         const descTextarea = document.getElementById('Deskripsi');
         const charCount = document.getElementById('charCount');
         
@@ -234,7 +234,7 @@
             }
         });
         
-        // Trigger input event to update counter on page load
+        
         descTextarea.dispatchEvent(new Event('input'));
     });
 </script>

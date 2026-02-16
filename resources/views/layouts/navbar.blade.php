@@ -1,6 +1,6 @@
 <nav class="app-header navbar navbar-expand">
   <style>
-    /* TEMA DARK BLUE UNTUK NAVBAR */
+    
     .app-header {
       background: rgba(10, 25, 47, 0.85) !important;
       backdrop-filter: blur(10px) !important;
@@ -109,7 +109,7 @@
 
   <div class="container-fluid">
 
-    <!-- LEFT SIDE -->
+    
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
@@ -126,17 +126,17 @@
       </li>
     </ul>
 
-    <!-- RIGHT SIDE -->
+    
     <ul class="navbar-nav ms-auto">
 
-      <!-- SEARCH -->
+      
       <li class="nav-item">
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
           <i class="bi bi-search"></i>
         </a>
       </li>
 
-      <!-- FULLSCREEN -->
+      
       <li class="nav-item">
         <a class="nav-link" href="#" data-lte-toggle="fullscreen">
           <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
@@ -144,7 +144,7 @@
         </a>
       </li>
 
-      <!-- USER MENU -->
+      
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
           <img src="{{ auth()->user()->photo 

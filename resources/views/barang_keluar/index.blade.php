@@ -29,7 +29,7 @@
     </form>
     
 
-    {{-- LAPORAN BUTTON --}}
+    
     <form method="GET" action="{{ route('barang-keluar.pdf') }}" class="px-3 pb-3">
         <div class="d-flex gap-2 flex-wrap">
             <input type="date" name="dari" required class="form-control w-auto">

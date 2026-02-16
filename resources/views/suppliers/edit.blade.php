@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid px-4">
 
-    <!-- Header Section -->
+    
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
             <h1 class="h3 mb-0 text-gray-800">Edit Supplier</h1>
@@ -14,7 +14,7 @@
         </a>
     </div>
 
-    <!-- Alert Notifications -->
+    
     @if ($errors->any())
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <i class="fas fa-exclamation-circle me-2"></i>
@@ -28,7 +28,7 @@
     </div>
     @endif
 
-    <!-- Form Card -->
+    
     <div class="card shadow border-0">
         <div class="card-body">
             <form action="{{ route('suppliers.update', $supplier->SupplierID) }}" method="POST">
@@ -36,7 +36,7 @@
                 @method('PUT')
                 
                 <div class="row">
-                    <!-- Nama Supplier -->
+                    
                     <div class="col-md-6 mb-4">
                         <label for="NamaSupplier" class="form-label fw-semibold">
                             <i class="fas fa-user-tie me-2 text-primary"></i>Nama Supplier
@@ -49,7 +49,7 @@
                                required>
                     </div>
 
-                    <!-- Email -->
+                    
                     <div class="col-md-6 mb-4">
                         <label for="Email" class="form-label fw-semibold">
                             <i class="fas fa-envelope me-2 text-primary"></i>Email
@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="row">
-                    <!-- Alamat -->
+                    
                     <div class="col-md-8 mb-4">
                         <label for="Alamat" class="form-label fw-semibold">
                             <i class="fas fa-map-marker-alt me-2 text-primary"></i>Alamat
@@ -74,7 +74,7 @@
                                   rows="3">{{ old('Alamat', $supplier->Alamat) }}</textarea>
                     </div>
 
-                    <!-- No Telp -->
+                    
                     <div class="col-md-4 mb-4">
                         <label for="NoTelp" class="form-label fw-semibold">
                             <i class="fas fa-phone me-2 text-primary"></i>No. Telepon
@@ -87,7 +87,7 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons -->
+                
                 <div class="d-flex justify-content-end gap-3 mt-4 pt-3 border-top">
                     <a href="{{ route('suppliers.index') }}" class="btn btn-outline-secondary">
                         <i class="fas fa-times me-2"></i>Batal
@@ -135,14 +135,14 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Phone number formatting
+        
         const phoneInput = document.getElementById('NoTelp');
         
         phoneInput.addEventListener('input', function() {
             let value = this.value.replace(/\D/g, '');
             
             if (value.length > 0) {
-                // Format: 0812-3456-7890
+                
                 if (value.length <= 4) {
                     value = value;
                 } else if (value.length <= 8) {

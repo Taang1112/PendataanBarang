@@ -13,18 +13,18 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // ================= BOX DATA =================
+        
         $totalBarang   = Barang::count();
         $totalKategori = Kategori::count();
         $totalSupplier = Supplier::count();
         $totalStok     = Barang::sum('Stock');
         $totalNilai    = Barang::selectRaw('SUM(Harga * Stock) as total')->value('total');
 
-        // ============ BARANG MASUK & KELUAR HARI INI ============
+        
         $masukHariIni  = BarangMasuk::whereDate('TanggalMasuk', today())->sum('JumlahMasuk');
         $keluarHariIni = BarangKeluar::whereDate('TanggalKeluar', today())->sum('JumlahKeluar');
 
-        // ================= GRAFIK =================
+        
         $grafikKategori = DB::table('barangs')
             ->join('kategoris', 'barangs.KategoriID', '=', 'kategoris.KategoriID')
             ->select('kategoris.NamaKategori', DB::raw('COUNT(barangs.BarangID) as total'))

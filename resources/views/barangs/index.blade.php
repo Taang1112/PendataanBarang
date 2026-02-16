@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid px-4">
 
-    <!-- Header Section -->
+    
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
             <h1 class="h3 mb-0 text-gray-800">Data Barang</h1>
@@ -40,7 +40,7 @@
     
     
 
-    <!-- Alert Notifications -->
+    
     @if(session('success'))
     <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
         <i class="fas fa-check-circle me-2"></i>
@@ -49,11 +49,11 @@
     </div>
     @endif
 
-    <!-- Card Container -->
+    
     <div class="card shadow border-0">
         <div class="card-body p-0">
             
-            <!-- Table -->
+            
             <div class="table-responsive">
                 <table class="table table-hover mb-0">
                     <thead class="bg-light">
@@ -124,14 +124,14 @@
                             </td>
                             <td>
                                 <div class="d-flex justify-content-center gap-2 pe-4">
-                                    <!-- Edit Link -->
+                                    
                                     <a href="{{ route('barangs.edit', $barang->BarangID) }}" 
                                         class="btn btn-sm btn-outline-primary">
                                          <i class="fas fa-edit me-1"></i>Edit
                                      </a>
                                      
                                     
-                                    <!-- Delete Form - Mempertahankan struktur asli -->
+                                    
                                     <form action="{{ route('barangs.destroy', $barang->BarangID) }}" 
                                           method="POST" 
                                           class="d-inline"
@@ -155,7 +155,7 @@
 
 </div>
 
-<!-- Image Modal -->
+
 <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -230,14 +230,14 @@
 </style>
 
 <script>
-    // Initialize tooltips
+    
     document.addEventListener('DOMContentLoaded', function() {
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl);
         });
         
-        // Image modal functionality
+        
         const images = document.querySelectorAll('img[src*="foto_barang"]');
         const modalImage = document.getElementById('modalImage');
         const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));

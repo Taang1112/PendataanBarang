@@ -10,11 +10,11 @@
 <div style="max-width:680px; margin:50px auto; padding:0 15px;">
 <div style="background:linear-gradient(135deg,#1e293b,#020617); border-radius:18px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.4);">
 
-<!-- TOP STRIPE -->
+
 
 <div style="height:6px; background:linear-gradient(90deg,#38bdf8,#6366f1,#a855f7);"></div>
 
-<!-- HEADER -->
+
 
 <div style="padding:35px 30px 25px; color:#ffffff;">
 <p style="margin:0; font-size:13px; letter-spacing:2px; color:#94a3b8;">
@@ -28,7 +28,7 @@ Notifikasi otomatis saat supplier menambahkan stok
 </p>
 </div>
 
-<!-- BODY -->
+
 
 <div style="padding:30px; background:rgba(255,255,255,0.03); backdrop-filter:blur(10px);">
 
@@ -66,7 +66,7 @@ VIEW IN DASHBOARD
 
 </div>
 
-<!-- FOOTER -->
+
 
 <div style="padding:22px; text-align:center; background:#020617; color:#64748b; font-size:12px;">
 <p style="margin:0;">&copy; {{ date('Y') }} Inventory Management System</p>

@@ -1,18 +1,11 @@
-# Pakai PHP + Apache, lebih stabil untuk Laravel production
+# Base image: PHP + Apache (production ready)
 FROM php:8.2-apache
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    unzip \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libonig-dev \
-    libxml2-dev \
-    libzip-dev \
-    zip \
+    git curl unzip \
+    libpng-dev libjpeg-dev libfreetype6-dev \
+    libonig-dev libxml2-dev libzip-dev zip \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
@@ -46,10 +39,16 @@ RUN chown -R www-data:www-data /var/www/html \
 # Enable Apache rewrite module
 RUN a2enmod rewrite
 
-# Cache config, route, view (production ready)
+# Clear & cache config, route, view
+RUN php artisan config:clear || true
+RUN php artisan route:clear || true
+RUN php artisan view:clear || true
 RUN php artisan config:cache || true
 RUN php artisan route:cache || true
 RUN php artisan view:cache || true
+
+# Run migrations otomatis saat build
+RUN php artisan migrate --force || true
 
 # Expose default Apache port
 EXPOSE 80
